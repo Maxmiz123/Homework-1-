@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class = "header">
+      Max Misrahi 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-avatar class ="avatar">
+      <img src="https://scontent.fopo2-1.fna.fbcdn.net/v/t1.0-9/50323519_1502749363201950_6804091407981084672_n.jpg?_nc_cat=102&_nc_ht=scontent.fopo2-1.fna&oh=1a078ebe348b500d16d239b58a095063&oe=5D5A9618">
+  </ion-avatar>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Date of Birth</ion-label>
+        <ion-datetime
+          disabled
+          displayFormat="MM/DD/YYYY"
+          [(ngModel)]="myDateOfBirth"
+        ></ion-datetime>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Place of Birth</ion-label>
+        New York, USA
+      </ion-item>
+
+      <ion-item>
+        <ion-label>University</ion-label>
+        Princeton University
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Major</ion-label>
+        Economics, Finance
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Github</ion-label>
+          Maxmiz123
+      </ion-item>
+
+      <div class="ion-padding">
+          <h2 style="text-align:center">Personal Interests</h2>
+          <ion-chip>
+            <ion-label>Football</ion-label>
+          </ion-chip>
+      
+          <ion-chip color="danger">
+            <ion-label>Chelsea FC</ion-label>
+          </ion-chip>
+      
+          <ion-chip>
+            <ion-icon name="pin"></ion-icon>
+            <ion-label>Travelling</ion-label>
+          </ion-chip>
+      
+          <ion-chip>
+            <ion-label>DJing</ion-label>
+          </ion-chip>
+  
+          <ion-chip>
+              <ion-label>Basketball</ion-label>
+            </ion-chip>
+          
+          <ion-chip>
+                <ion-label>Songwriting</ion-label>
+            </ion-chip>
+          
+          <ion-chip>
+                <ion-label>New York Knicks</ion-label>
+            </ion-chip>
+        </div>
+
+        <p style ="text-align:center;"> <b> Answer these questions!</b></p>
+
+      <ion-item *ngFor="let entry of form">
+              <ion-label>{{entry.val}}</ion-label>
+              <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+      </ion-item>
+    </ion-list>  
+
+    <p id = Statement> <b> If yes to all, I have faith you will press the right button below!</b> </p>
+
+</ion-content>
+
+<ion-button (click)="presentAlert()">Press Me!</ion-button>
+<ion-button (click)="pressMe()">Press Me</ion-button>
